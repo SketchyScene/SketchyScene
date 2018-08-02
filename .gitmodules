@@ -1,0 +1,6 @@
+[submodule "USketch"]
+	path = USketch
+	url = https://github.com/ruofeidu/USketch
+[submodule "DuCrawler"]
+	path = DuCrawler
+	url = https://github.com/ruofeidu/DuCrawler
