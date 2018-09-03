@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+<title>SketchyScene: Richly-Annotated Scene Sketches</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta property="og:image" content="files/teaser.png"/>
+<meta property="og:title" content="SketchyScene: Richly-Annotated Scene Sketches" />
+
+
+<script type="text/javascript">
+// redefining default features
+var _POPUP_FEATURES = 'width=500,height=300,resizable=1,scrollbars=1,titlebar=1,status=1';
+</script>
+<link rel="shortcut icon" href="files/icon.png" >
+<link media="all" href="glab.css" type="text/css" rel="StyleSheet">
+<style type="text/css" media="all">
+IMG {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	FLOAT: center;
+	PADDING-BOTTOM: 0px;
+	PADDING-TOP: 0px
+}
+#primarycontent {
+	MARGIN-LEFT: auto; ; WIDTH: expression(document.body.clientWidth >
+1000? "1000px": "auto" ); MARGIN-RIGHT: auto; TEXT-ALIGN: left; max-width:
+1000px }
+BODY {
+	TEXT-ALIGN: center
+}
+</style>
+</head>
+
+<body>
+
+<div id="primarycontent">
+<center><h1>SketchyScene: Richly-Annotated Scene Sketches</h1></center>
+<center><h2>
+  <a href="https://changqingzou.weebly.com/">Changqing Zou*</a><sup>1</sup>&nbsp;&nbsp;&nbsp;
+  <a href="http://www.eecs.qmul.ac.uk/~qian/">Qian Yu*<sup>2</sup>&nbsp;&nbsp;&nbsp;
+  <a href="http://www.duruofei.com/">Ruofei Du</a><sup>1</sup>&nbsp;&nbsp;&nbsp;
+  <a href="https://markmohr.github.io/">Haoran Mo</a><sup>3</sup>&nbsp;&nbsp;&nbsp;
+  <a href="http://www.eecs.qmul.ac.uk/~yzs/">Yi-Zhe Song</a><sup>2</sup>&nbsp;&nbsp;&nbsp;
+  <a href="https://www.eecs.qmul.ac.uk/~txiang/">Tao Xiang</a><sup>2</sup>&nbsp;&nbsp;&nbsp;
+  <br>
+  <a href="http://sdcs.sysu.edu.cn/content/2537">Chengying Gao</a><sup>3</sup>&nbsp;&nbsp;&nbsp;
+  <a href="http://cfcs.pku.edu.cn/baoquan/">Baoquan Chen**</a><sup>4</sup>&nbsp;&nbsp;&nbsp;
+  <a href="http://www.cs.sfu.ca/~haoz/">Hao Zhang</a><sup>5</sup>
+</center>
+  
+<center>
+  <h2>
+    <sup>1</sup>University of Maryland&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <sup>2</sup>Queen Mary University of London&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <sup>3</sup>Sun Yat-sen University&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    <sup>4</sup>Shandong University&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <sup>5</sup>Simon Fraser University
+  </h2>
+</center>
+
+<center>
+  <h2>
+    <a href="https://eccv2018.org/">ECCV 2018</a>
+  </h2>
+</center>
+
+<center>
+  <h2>
+    <strong>
+      <a href="https://arxiv.org/pdf/1808.02473.pdf">[Paper]</a>  
+      <a href="https://github.com/SketchyScene/SketchyScene">[Code]</a>  
+    </strong>
+  </h2>
+</center>
+<center>
+  <p>
+    <a href="files/teaser.png"><img src="files/teaser.png" width="1000"></a>
+  </p>
+</center>
+
+<br>
+
+
+<h1 align='center'>Abstract</h1>
+<div style="font-size:20px"><p>We contribute the first large-scale dataset of scene sketches, SketchyScene, with the goal of advancing research on sketch understanding at both the object and scene level. The dataset is created through a novel and carefully designed crowdsourcing pipeline, enabling users to efficiently generate large quantities realistic and diverse scene sketches. SketchyScene contains more than 29,000 scene-level sketches, 7,000+ pairs of scene templates and photos, and 11,000+ object sketches. All objects in the scene sketches have ground-truth semantic and instance masks. The dataset is also highly scalable and extensible, easily allowing augmenting and/or changing scene composition. We demonstrate the potential impact of SketchyScene by training new computational models for semantic segmentation of scene sketches and showing how the new dataset enables several applications including image retrieval, sketch colorization, editing, and captioning, etc. </p></div>
+
+<a href="https://arxiv.org/pdf/1808.02473.pdf"><img style="float: left; padding: 10px; PADDING-RIGHT: 30px;" alt="paper thumbnail" src="files/page.png" width=170></a>
+<br>
+
+<h2>Paper</h2>
+<p><a href="https://arxiv.org/pdf/1808.02473.pdf">ECCV</a>,  2018. </p>
+
+<h2>Citation</h2>
+<p>Changqing Zou, Qian Yu, Ruofei Du, Haoran Mo, Yi-Zhe Song, Tao Xiang, Chengying Gao, Baoquan Chen and Hao Zhang. "SketchyScene: Richly-Annotated Scene Sketches", in ECCV, 2018.
+<a href="./SketchySceneBib.txt">Bibtex</a>
+</p>
+
+<h2>Code: <a href="https://github.com/SketchyScene/SketchyScene">TensorFlow</a></h2>
+<br>
+
+<hr>
+
+<h1 align='center'>Dataset</h1>
+<table align="center" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="middle">
+    <p><a href="files/dataset.png"><img src="files/dataset.png"  width=1000></a>*From left to right: reference image, synthesized sketchy scene ("L" is used to mark the category alignment), ground-truth of semantic and instance segmentation.</p>
+    <br>
+    <p><a href="files/dataset2.png"><img src="files/dataset2.png"  width=1000></a>*Examples of augmented scene sketches based on the scene sketch templates.</p>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">
+      <h3>7265 (train 5617 + val 535 + test 1113) <a href="https://drive.google.com/open?id=1m1fac2XIZVAGu_ByE6BtwxGSLytZspO-">[Download]</a></h3>
+      <h3>(Further data will come soon)</h3>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<h1 align='center'>Demo</h1>
+<table align="center" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="middle">
+    <p><a href="files/demo.png"><img src="files/demo.png"  width=1000></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle"><h3><a href="http://duruofei.com/skenew/?task=1">[Try]</a></h3></td>
+  </tr>
+</table>
+
+<hr>
+
+<h1 align='center'>Acknowledgement</h1>
+<p>This work was partially supported by the China National 973 Program (2015CB352501), NSFC-ISF(61561146397), NSERC 611370, and the China Scholarship Council (CSC).</p>
+<br>
+
+<div style="display:none">
+</div>
+</body>
+</html>

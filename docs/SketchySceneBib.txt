@@ -1,0 +1,14 @@
+@inproceedings{ZouSketchyScene,
+  author    = {Changqing Zou and
+                Qian Yu and
+                Ruofei Du and
+                Haoran Mo and
+                Yi-Zhe Song and 
+                Tao Xiang and 
+                Chengying Gao and 
+                Baoquan Chen and
+                Hao Zhang},
+  title     = {SketchyScene: Richly-Annotated Scene Sketches},
+  booktitle = {ECCV},
+  year      = {2018}
+}
