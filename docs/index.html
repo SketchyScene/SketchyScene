@@ -16,18 +16,18 @@ var _POPUP_FEATURES = 'width=500,height=300,resizable=1,scrollbars=1,titlebar=1,
 <link media="all" href="glab.css" type="text/css" rel="StyleSheet">
 <style type="text/css" media="all">
 IMG {
-	PADDING-RIGHT: 0px;
-	PADDING-LEFT: 0px;
-	FLOAT: center;
-	PADDING-BOTTOM: 0px;
-	PADDING-TOP: 0px
+  PADDING-RIGHT: 0px;
+  PADDING-LEFT: 0px;
+  FLOAT: center;
+  PADDING-BOTTOM: 0px;
+  PADDING-TOP: 0px
 }
 #primarycontent {
-	MARGIN-LEFT: auto; ; WIDTH: expression(document.body.clientWidth >
-1000? "1000px": "auto" ); MARGIN-RIGHT: auto; TEXT-ALIGN: left; max-width:
-1000px }
+  MARGIN-LEFT: auto; ; WIDTH: expression(document.body.clientWidth >
+1200? "1200px": "auto" ); MARGIN-RIGHT: auto; TEXT-ALIGN: left; max-width:
+1200px }
 BODY {
-	TEXT-ALIGN: center
+  TEXT-ALIGN: center
 }
 </style>
 </head>
@@ -74,31 +74,10 @@ BODY {
     </strong>
   </h2>
 </center>
-<center>
-  <p>
-    <a href="files/teaser.png"><img src="files/teaser.png" width="1000"></a>
-  </p>
-</center>
 
 <br>
 
-
-<h1 align='center'>Abstract</h1>
 <div style="font-size:20px"><p>We contribute the first large-scale dataset of scene sketches, SketchyScene, with the goal of advancing research on sketch understanding at both the object and scene level. The dataset is created through a novel and carefully designed crowdsourcing pipeline, enabling users to efficiently generate large quantities realistic and diverse scene sketches. SketchyScene contains more than 29,000 scene-level sketches, 7,000+ pairs of scene templates and photos, and 11,000+ object sketches. All objects in the scene sketches have ground-truth semantic and instance masks. The dataset is also highly scalable and extensible, easily allowing augmenting and/or changing scene composition. We demonstrate the potential impact of SketchyScene by training new computational models for semantic segmentation of scene sketches and showing how the new dataset enables several applications including image retrieval, sketch colorization, editing, and captioning, etc. </p></div>
-
-<a href="https://arxiv.org/pdf/1808.02473.pdf"><img style="float: left; padding: 10px; PADDING-RIGHT: 30px;" alt="paper thumbnail" src="files/page.png" width=170></a>
-<br>
-
-<h2>Paper</h2>
-<p><a href="https://arxiv.org/pdf/1808.02473.pdf">ECCV</a>,  2018. </p>
-
-<h2>Citation</h2>
-<p>Changqing Zou, Qian Yu, Ruofei Du, Haoran Mo, Yi-Zhe Song, Tao Xiang, Chengying Gao, Baoquan Chen and Hao Zhang. "SketchyScene: Richly-Annotated Scene Sketches", in ECCV, 2018.
-<a href="./SketchySceneBib.txt">Bibtex</a>
-</p>
-
-<h2>Code: <a href="https://github.com/SketchyScene/SketchyScene">TensorFlow</a></h2>
-<br>
 
 <hr>
 
@@ -106,9 +85,11 @@ BODY {
 <table align="center" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td align="center" valign="middle">
-    <p><a href="files/dataset.png"><img src="files/dataset.png"  width=1000></a>*From left to right: reference image, synthesized sketchy scene ("L" is used to mark the category alignment), ground-truth of semantic and instance segmentation.</p>
+    <a href="files/dataset.png"><img src="files/dataset.png"  width=1000></a>
+    <p>*From left to right: reference image, synthesized sketchy scene ("L" is used to mark the category alignment), ground-truth of semantic and instance segmentation.</p>
     <br>
-    <p><a href="files/dataset2.png"><img src="files/dataset2.png"  width=1000></a>*Examples of augmented scene sketches based on the scene sketch templates.</p>
+    <a href="files/dataset3.png"><img src="files/dataset3.png"  width=1000>
+    <p></a>*Examples of augmented scene sketches based on a scene sketch template (the 1st image).</p>
     </td>
   </tr>
   <tr>
@@ -118,6 +99,23 @@ BODY {
     </td>
   </tr>
 </table>
+
+<hr>
+
+<a href="https://arxiv.org/pdf/1808.02473.pdf"><img style="float: left; padding: 10px; PADDING-RIGHT: 30px;" alt="paper thumbnail" src="files/page.png" width=200></a>
+<br>
+
+<h2>Paper</h2>
+<p><a href="https://arxiv.org/pdf/1808.02473.pdf">ECCV</a>,  2018. </p>
+
+<h2>Citation</h2>
+<p>Changqing Zou, Qian Yu, Ruofei Du, Haoran Mo, Yi-Zhe Song, Tao Xiang, Chengying Gao, Baoquan Chen and Hao Zhang. "SketchyScene: Richly-Annotated Scene Sketches", in ECCV, 2018.
+</p>
+
+<h2><a href="./SketchySceneBib.txt">Bibtex</a></h2>
+
+<h2>Code: <a href="https://github.com/SketchyScene/SketchyScene">TensorFlow</a></h2>
+<br>
 
 <hr>
 
