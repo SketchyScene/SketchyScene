@@ -8,9 +8,12 @@ Please cite the corresponding paper if you found our datasets or code useful:
 
 ## Dataset
 
-[7265 (train 5617 + val 535 + test 1113) Downloading](https://drive.google.com/open?id=1m1fac2XIZVAGu_ByE6BtwxGSLytZspO-)
+[7265 Samples (train 5617 + val 535 + test 1113)](https://drive.google.com/open?id=1m1fac2XIZVAGu_ByE6BtwxGSLytZspO-)
 
-(Further data will come soon)
+[Selected Synthesized Samples (3 from 30 synthesize examples for each template)](https://drive.google.com/drive/folders/1x7DiyTlpEFb_fydOyjL48wnvREQO1u1d?usp=sharing)
+
+[Overall Synthesized Samples (30 synthesize examples for each template)](https://drive.google.com/drive/folders/15TWNXFOKoB0dKkOaDofFgLJ_9JuxgStm?usp=sharing)
+
 
 ## USketch
 
