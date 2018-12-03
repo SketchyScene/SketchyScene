@@ -1,0 +1,26 @@
+.idea/
+
+# model
+datas/
+resnet_pretrained_models/
+deeplab_pretrained_models/
+
+
+# Batches
+*.npz
+
+
+# test data
+testData/
+
+
+# outputs
+outputs/
+log/
+snapshot/
+
+# temporary files
+*.txt~
+*.pyc
+.DS_Store
+.gitignore~
