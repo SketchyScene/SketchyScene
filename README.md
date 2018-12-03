@@ -1,10 +1,7 @@
 # SketchyScene: Richly-Annotated Scene Sketches.
 
-We contribute the first large-scale dataset of _scene sketches_, **SketchyScene**, with the goal of advancing research on sketch understanding at both the object and scene level. The dataset is created through a novel and carefully designed _crowdsourcing_ pipeline, enabling users to efficiently generate large quantities of realistic and diverse scene sketches. **SketchyScene** contains more than 29,000 scene-level sketches, 7,000+ pairs of scene templates and photos, and 11,000+ object sketches. All objects in the scene sketches have ground-truth semantic and instance masks. The dataset is also highly scalable and extensible, easily allowing augmenting and/or changing scene composition. We demonstrate the potential impact of **SketchyScene** by training new computational models for semantic segmentation of scene sketches and showing how the new dataset enables several applications including image retrieval, sketch colorization, editing, and captioning, etc. The dataset and code can be found at https://github.com/SketchyScene/SketchyScene.
-
-Please cite the corresponding paper if you found our datasets or code useful:
-
-> SketchyScene: Richly-Annotated Scene Sketches. Changqing Zou, Qian Yu, Ruofei Du, Haoran Mo, Yi-Zhe Song, Tao Xiang, Chengying Gao, Baoquan Chen, Hao Zhang. In Proceedings of European Conference on Computer Vision (ECCV), 2018.
+Data collection and model training code for ["SketchyScene: Richly-Annotated Scene Sketches
+"](http://openaccess.thecvf.com/content_ECCV_2018/papers/Changqing_Zou_SketchyScene_Richly-Annotated_Scene_ECCV_2018_paper.pdf)
 
 ## Dataset
 
@@ -32,3 +29,105 @@ We selected 45 categories for our dataset, including objects and stuff classes. 
 
 Instead of asking workers to draw each object, we provided them with plenty of object sketches (each object candidate is also refer to a ``component") as candidates. In order to have enough variations in the object appearance in terms of pose and appearance, we searched and downloaded around 1,500 components for each category. 
 
+## Semantic Segmentation
+
+The code under `Semantic_Segmentation` is for the semantic segmentation experiments of our SketchyScene dataset.
+
+### Requirements
+
+- Python 3
+- Tensorflow (>= 1.0.0)
+- Numpy
+- PIL (Pillow version = 2.3.0)
+- [pydensecrf](https://github.com/lucasb-eyer/pydensecrf)
+
+### Preparations
+
+- Download the whole dataset and place them under `data` directory following its instructions.
+- Generate the ImageNet pre-trained "ResNet-101" model in TensorFlow version for initial training and place it under the `resnet_pretrained_model` directory. This can be obtained following the instructions in [chenxi116/TF-resnet](https://github.com/chenxi116/TF-resnet#example-usage). For convenience, you can download our converted model [here](https://drive.google.com/file/d/1Z72Iv3OobWv-tYoUwvY_7HMgsLUGKkcp/view?usp=sharing). 
+
+### Training
+
+After the preparations, run:
+
+```
+python3 segment_main.py --mode=train
+```
+
+Also, you can modify the training parameters in `configs.py`
+
+
+### Evaluation
+
+Evaluation can be done with `val` and `test` dataset. Make sure that your trained tfmodel is under the directory `Semantic_Segmentation/outputs/snapshot`. [DenseCRF](https://github.com/lucasb-eyer/pydensecrf) can be used to improve the segmentation performance as a post-processing skill.
+
+For evaluation under `val`/`test` dataset without DenseCRF, run:
+```
+python3 segment_main.py --mode='val' --dcrf=0
+python3 segment_main.py --mode='test' --dcrf=0
+```
+
+- DenseCRF is used if setting `--dcrf=1`
+
+Our trained model can be download [here](https://drive.google.com/file/d/1Z72Iv3OobWv-tYoUwvY_7HMgsLUGKkcp/view?usp=sharing).
+
+
+### Inference
+
+You can obtain a semantic segmentation output during inference. Inference can be done with `val` and `test` dataset.
+
+For inference with the 2nd image in `val` dataset without DenseCRF, which the background is white, run:
+
+```
+python3 segment_main.py --mode='inference' --infer_dataset='val' --image_id=2 --black_bg=0  --dcrf=0
+```
+
+- Inference under `test` dataset if setting `--infer_dataset='test'`
+- Try other image if setting `--image_id` to other number
+- The background is black if setting `--black_bg=1`. Otherwise, it is white.
+- DenseCRF is used if setting `--dcrf=1`
+
+Also, you can try [our trained model](https://drive.google.com/file/d/1Z72Iv3OobWv-tYoUwvY_7HMgsLUGKkcp/view?usp=sharing).
+
+
+### Visualization
+
+You can visualize the ground-truth semantic results with the `.mat` data using `tools/semantic_visualize.py`. **Note** that the data should be correctly arranged following the instructions under `data` directory.
+
+For visualization with the 1st/2nd image in `train` dataset, run:
+
+```
+python3 semantic_visualize.py --dataset='train' --image_id=1 --black_bg=1
+python3 semantic_visualize.py --dataset='train' --image_id=2 --black_bg=0
+```
+
+- Visualization under `val`/`test` dataset if setting `--dataset='val'` or `--dataset='test'`
+- Try other image if setting `--image_id` to other number
+- The background is black if setting `--black_bg=1` and white if `--black_bg=0`.
+
+
+
+## Citation
+
+Please cite the corresponding paper if you found our datasets or code useful:
+
+```
+@inproceedings{ZouSketchyScene,
+  author    = {Changqing Zou and
+                Qian Yu and
+                Ruofei Du and
+                Haoran Mo and
+                Yi-Zhe Song and
+                Tao Xiang and
+                Chengying Gao and
+                Baoquan Chen and
+                Hao Zhang},
+  title     = {SketchyScene: Richly-Annotated Scene Sketches},
+  booktitle = {ECCV},
+  year      = {2018}
+}
+```
+
+## Credits
+- ResNet-101 model pre-trained on ImageNet in TensorFlow version by [chenxi116](https://github.com/chenxi116/TF-resnet)
+- Code for DeepLab model by [Tensorflow Authors](https://github.com/tensorflow/models/blob/master/research/resnet/resnet_model.py) and [chenxi116](https://github.com/chenxi116/TF-deeplab)
