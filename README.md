@@ -14,7 +14,17 @@ Data collection and model training code for ["SketchyScene: Richly-Annotated Sce
 
 ## USketch
 
-**USketch** is a web-driven tool for crowdsourcing the **SketchyScene** dataset. It is open-sourced at https://github.com/ruofeidu/USketch. A live demo is located at http://duruofei.com/skenew/?task=1.
+**USketch** is a web-driven tool for crowdsourcing the **SketchyScene** dataset. It is open-sourced at https://github.com/ruofeidu/USketch. You can also clone and update the submodules of this repo to acquire the full source code:
+
+You must run two commands:  to initialize your local configuration file, and git submodule update to fetch all the data from that project and check out the appropriate commit listed in your superproject:
+
+```
+git clone git@github.com:SketchyScene/SketchyScene.git
+git submodule init
+git submodule update
+```
+
+A live demo is located at http://duruofei.com/skenew/?task=1.
 
 ![USketch Interface](figures/USketch.jpg "Interface and work flow of USketch for crowdsourcing the dataset. See areas of function buttons (upper left), component display (lower left), and canvas (right). ")
 
