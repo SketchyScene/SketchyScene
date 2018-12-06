@@ -1,0 +1,36 @@
+///
+/// Elemental by Pixelarity
+/// pixelarity.com @pixelarity
+/// License: pixelarity.com/license
+///
+
+/* Footer */
+
+	#footer {
+		@include padding(5em, 5em);
+		margin: 0 auto;
+		text-align: center;
+		width: _size(main);
+		max-width: calc(100% - 4em);
+
+		.copyright {
+			color: _palette(fg-light);
+			margin: (_size(element-margin) * 2) 0 _size(element-margin) 0;
+		}
+
+		@include breakpoint(large) {
+			@include padding(4em, 4em);
+		}
+
+		@include breakpoint(medium) {
+			max-width: 100%;
+		}
+
+		@include breakpoint(small) {
+			@include padding(3em, 3em);
+		}
+
+		@include breakpoint(xsmall) {
+			@include padding(2em, 2em);
+		}
+	}

@@ -1,0 +1,68 @@
+///
+/// Elemental by Pixelarity
+/// pixelarity.com @pixelarity
+/// License: pixelarity.com/license
+///
+
+/* Main */
+
+	#main {
+		background-color: _palette(bg);
+		border-radius: 1.5em;
+		margin: 0 auto;
+		width: _size(main);
+		max-width: calc(100% - 4em);
+
+		> header {
+			@include padding(4em, 0);
+			text-align: center;
+
+			.logo {
+				@include vendor('transition', (
+					'transform 1s ease',
+					'opacity 1s ease-in-out'
+				));
+				@include vendor('transform', 'translateY(0)');
+				opacity: 1;
+			}
+
+			.logo + h1 {
+				@include vendor('transition', 'opacity 1s ease-in-out');
+				@include vendor('transition-delay', '0.35s');
+				font-size: 1.35em;
+				opacity: 1;
+			}
+		}
+
+		> #content {
+			padding-top: 0;
+		}
+
+		@include breakpoint(medium) {
+			border-radius: 0;
+			max-width: 100%;
+
+			> header {
+				@include padding(5em, 0);
+			}
+		}
+
+		@include breakpoint(small) {
+			> header {
+				@include padding(4em, 0);
+			}
+		}
+
+		body.is-loading & {
+			> header {
+				.logo {
+					@include vendor('transform', 'translateY(1em)');
+					opacity: 0;
+				}
+
+				.logo + h1 {
+					opacity: 0;
+				}
+			}
+		}
+	}

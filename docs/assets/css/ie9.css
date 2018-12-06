@@ -1,0 +1,133 @@
+/*
+	Elemental by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* List */
+
+	ul.grid-icons:after {
+		clear: both;
+		content: '';
+		display: block;
+	}
+
+	ul.grid-icons li {
+		float: left;
+	}
+
+		ul.grid-icons li:before {
+			content: '';
+			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+		}
+
+		ul.grid-icons li > .inner {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+	ul.faces:after {
+		clear: both;
+		content: '';
+		display: block;
+	}
+
+	ul.faces li {
+		float: left;
+		width: 30%;
+	}
+
+	ul.major-icons li {
+		vertical-align: top;
+	}
+
+	ul.joined-icons {
+		display: inline-block;
+		margin-bottom: 0;
+	}
+
+		ul.joined-icons:after {
+			clear: both;
+			content: '';
+			display: block;
+		}
+
+		ul.joined-icons li {
+			float: left;
+		}
+
+/* Banner */
+
+	.banner {
+		background-image: url("../../images/pic01.jpg");
+	}
+
+		.banner:before {
+			background-color: rgba(74, 74, 74, 0.5);
+			content: '';
+			display: block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+		}
+
+		.banner:after {
+			display: none;
+		}
+
+		.banner > * {
+			position: relative;
+			z-index: 1;
+		}
+
+/* Wrapper */
+
+	.wrapper.spotlight {
+		position: relative;
+	}
+
+		.wrapper.spotlight:after {
+			clear: both;
+			content: '';
+			display: block;
+		}
+
+		.wrapper.spotlight > * {
+			float: left;
+		}
+
+		.wrapper.spotlight > .image {
+			height: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 40%;
+		}
+
+/* Header */
+
+	body {
+		padding-top: 8em;
+	}
+
+	#header > nav {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	#header.alt {
+		margin-top: -8em;
+		height: auto;
+		position: relative;
+		padding: 2em 0;
+	}
+
+		#header.alt > nav {
+			position: relative;
+		}

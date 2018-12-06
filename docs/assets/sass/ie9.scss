@@ -1,0 +1,152 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/skel';
+
+/*
+	Elemental by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* List */
+
+	ul {
+		&.grid-icons {
+			&:after {
+				clear: both;
+				content: '';
+				display: block;
+			}
+
+			li {
+				float: left;
+
+				&:before {
+					content: '';
+					display: inline-block;
+					height: 100%;
+					vertical-align: middle;
+				}
+
+				> .inner {
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+		}
+
+		&.faces {
+			&:after {
+				clear: both;
+				content: '';
+				display: block;
+			}
+
+			li {
+				float: left;
+				width: 30%;
+			}
+		}
+
+		&.major-icons {
+			li {
+				vertical-align: top;
+			}
+		}
+
+		&.joined-icons {
+			display: inline-block;
+			margin-bottom: 0;
+
+			&:after {
+				clear: both;
+				content: '';
+				display: block;
+			}
+
+			li {
+				float: left;
+			}
+		}
+	}
+
+/* Banner */
+
+	.banner {
+		@include vendor('background-image', (
+			'url("../../images/pic01.jpg")'
+		));
+
+		&:before {
+			background-color: rgba(74,74,74,0.50);
+			content: '';
+			display: block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+		}
+
+		&:after {
+			display: none;
+		}
+
+		> * {
+			position: relative;
+			z-index: 1;
+		}
+	}
+
+/* Wrapper */
+
+	.wrapper {
+		&.spotlight {
+			position: relative;
+
+			&:after {
+				clear: both;
+				content: '';
+				display: block;
+			}
+
+			> * {
+				float: left;
+			}
+
+			> .image {
+				height: 100%;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 40%;
+			}
+		}
+	}
+
+/* Header */
+
+	body {
+		padding-top: 8em;
+	}
+
+	#header {
+		> nav {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		&.alt {
+			margin-top: -8em;
+			height: auto;
+			position: relative;
+			padding: 2em 0;
+
+			> nav {
+				position: relative;
+			}
+		}
+	}
