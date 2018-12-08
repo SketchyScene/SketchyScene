@@ -1,0 +1,16 @@
+[comment]: <> (This markdown file is generated from members.json by build.py)
+<ul class="faces">
+<li><span class="image"><a href="https://changqingzou.weebly.com"><img src="photos/ChangqingZou.jpg" alt="Changqing Zou's photo" /></a></span><h3><a href="https://changqingzou.weebly.com">Changqing Zou</a></h3><p>University of Maryland, College Park</p></li>
+<li><span class="image"><a href="http://www.eecs.qmul.ac.uk/~qian"><img src="photos/QianYu.jpg" alt="Qian Yu's photo" /></a></span><h3><a href="http://www.eecs.qmul.ac.uk/~qian">Qian Yu</a></h3><p>Queen Mary University of London</p></li>
+<li><span class="image"><a href="http://www.duruofei.com"><img src="photos/RuofeiDu.jpg" alt="Ruofei Du's photo" /></a></span><h3><a href="http://www.duruofei.com">Ruofei Du</a></h3><p>University of Maryland, College Park</p></li>
+</ul>
+<ul class="faces">
+<li><span class="image"><a href="https://markmohr.github.io"><img src="photos/HaoranMo.jpg" alt="Hao-Ran Mo's photo" /></a></span><h3><a href="https://markmohr.github.io">Hao-Ran Mo</a></h3><p>Sun Yat-sen University</p></li>
+<li><span class="image"><a href="http://www.eecs.qmul.ac.uk/~yzs/"><img src="photos/YizheSong.jpg" alt="Yi-Zhe Song's photo" /></a></span><h3><a href="http://www.eecs.qmul.ac.uk/~yzs/">Yi-Zhe Song</a></h3><p>Queen Mary University of London</p></li>
+<li><span class="image"><a href="https://www.eecs.qmul.ac.uk/~txiang/"><img src="photos/TaoXiang.jpg" alt="Tao Xiang's photo" /></a></span><h3><a href="https://www.eecs.qmul.ac.uk/~txiang/">Tao Xiang</a></h3><p>Queen Mary University of London </p></li>
+</ul>
+<ul class="faces">
+<li><span class="image"><a href="http://sdcs.sysu.edu.cn/content/2537"><img src="photos/ChengyingGao.jpg" alt="Chengying Gao's photo" /></a></span><h3><a href="http://sdcs.sysu.edu.cn/content/2537">Chengying Gao</a></h3><p>Sun Yat-sen University</p></li>
+<li><span class="image"><a href="https://cfcs.pku.edu.cn/baoquan/"><img src="photos/BaoquanChen.jpg" alt="Baoquan Chen's photo" /></a></span><h3><a href="https://cfcs.pku.edu.cn/baoquan/">Baoquan Chen</a></h3><p>Peking University</p></li>
+<li><span class="image"><a href="http://www.cs.sfu.ca/~haoz"><img src="photos/HaoZhang.jpg" alt="Hao Zhang's photo" /></a></span><h3><a href="http://www.cs.sfu.ca/~haoz">Hao Zhang</a></h3><p>Simon Fraser University</p></li>
+</ul>

@@ -1,0 +1,67 @@
+///
+/// Elemental by Pixelarity
+/// pixelarity.com @pixelarity
+/// License: pixelarity.com/license
+///
+
+/* Banner */
+
+	.banner {
+		@include color-button(accent4);
+		@include color-typography(accent4);
+		@include padding(7em, 0);
+		@include vendor('background-image', (
+			'linear-gradient(to top, rgba(74,74,74,0.50), rgba(74,74,74,0.50))',
+			'url("../../images/pic01.jpg")'
+		));
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+		text-align: center;
+
+		h2 {
+			font-size: 2.5em;
+			margin: 0 0 (_size(element-margin) * 0.5) 0;
+		}
+
+		> * {
+			@include vendor('transition', 'opacity 2s ease-in-out');
+			@include vendor('transition-delay', '1.25s');
+			opacity: 1;
+		}
+
+		@include breakpoint(large) {
+			@include padding(5em, 0);
+
+			h2 {
+				font-size: 2em;
+			}
+		}
+
+		@include breakpoint(medium) {
+			@include padding(8em, 3em);
+		}
+
+		@include breakpoint(small) {
+			@include padding(4em, 3em);
+
+			h2 {
+				font-size: 1.75em;
+			}
+		}
+
+		@include breakpoint(xxsmall) {
+			@include padding(4em, 2em);
+
+			h2 {
+				font-size: 1.5em;
+			}
+		}
+
+		body.is-loading & {
+			> * {
+				opacity: 0;
+			}
+		}
+	}

@@ -1,20 +1,48 @@
-# SketchyScene: Richly-Annotated Scene Sketches.
+# SketchyScene: Richly-Annotated Scene Sketches
 
-Data collection and model training code for ["SketchyScene: Richly-Annotated Scene Sketches
+This repository hosts the datasets and the code for training the model. Please refer to our ECCV paper for more information: ["SketchyScene: Richly-Annotated Scene Sketches
 "](http://openaccess.thecvf.com/content_ECCV_2018/papers/Changqing_Zou_SketchyScene_Richly-Annotated_Scene_ECCV_2018_paper.pdf)
 
 ## Dataset
 
-[7265 Samples (train 5617 + val 535 + test 1113)](https://drive.google.com/open?id=1m1fac2XIZVAGu_ByE6BtwxGSLytZspO-)
+Our datasets consist of three part:
+* *SketchyScene-7k* 
+    * *SketchyScene-7k* contains 7265 crowdsourced sketchy scenes (train 5617 + val 535 + test 1113).
+* *SketchyScene-Selected3*
+	* *SketchyScene-Selected3* contains 3 manually selected, synthesized sketchy scenes based on the crowdsourced template, resulting 21,795 sketchy scenes. 
+* *SketchyScene-Synthesized30* 
+    * *SketchyScene-Synthesized30* contains 30 synthesized examples for each template, resulting additional 217,950 sketchy scenes.
+	
+### UMIACS Hosting (7-zip)
 
-[Selected Synthesized Samples (3 from 30 synthesize examples for each template)](https://drive.google.com/drive/folders/1x7DiyTlpEFb_fydOyjL48wnvREQO1u1d?usp=sharing)
+* [SketchyScene-7k](https://obj.umiacs.umd.edu/private_datasets/SketchyScene-7k.7z) (750.3 MB)
+* [SketchyScene-Selected3](https://obj.umiacs.umd.edu/private_datasets/SketchyScene-Selected3.7z) (1.6 GB)
+* [SketchyScene-Synthesized30](https://obj.umiacs.umd.edu/private_datasets/SketchyScene-Synthesized30.7z) (16.1GB)
 
-[Overall Synthesized Samples (30 synthesize examples for each template)](https://drive.google.com/drive/folders/15TWNXFOKoB0dKkOaDofFgLJ_9JuxgStm?usp=sharing)
+### Google Drive Hosting (tar or zip)
+* [SketchyScene-7k](https://drive.google.com/open?id=1m1fac2XIZVAGu_ByE6BtwxGSLytZspO-)
+* [SketchyScene-Selected3](https://drive.google.com/drive/folders/1x7DiyTlpEFb_fydOyjL48wnvREQO1u1d?usp=sharing)
+* [SketchyScene-Synthesized30](https://drive.google.com/drive/folders/15TWNXFOKoB0dKkOaDofFgLJ_9JuxgStm?usp=sharing)
 
+### Directory 
+* DRAWING_GT_VIS/: scene sketches in .png format
+* DRAWING_GT/: scene sketches in .mat format
+* CLASS_GT/: ground-truth semantic segmentation in .mat format
+* INSTANCE_GT/ ground-truth instance segmentation in .mat format
 
 ## USketch
 
-**USketch** is a web-driven tool for crowdsourcing the **SketchyScene** dataset. It is open-sourced at https://github.com/ruofeidu/USketch. A live demo is located at http://duruofei.com/skenew/?task=1.
+**USketch** is a web-driven tool for crowdsourcing the **SketchyScene** dataset. It is open-sourced at https://github.com/ruofeidu/USketch. You can also clone and update the submodules of this repo to acquire the full source code:
+
+You must run two commands:  to initialize your local configuration file, and git submodule update to fetch all the data from that project and check out the appropriate commit listed in your superproject:
+
+```
+git clone git@github.com:SketchyScene/SketchyScene.git
+git submodule init
+git submodule update
+```
+
+A live demo is presented at http://duruofei.com/skenew/?task=1.
 
 ![USketch Interface](figures/USketch.jpg "Interface and work flow of USketch for crowdsourcing the dataset. See areas of function buttons (upper left), component display (lower left), and canvas (right). ")
 
@@ -112,7 +140,7 @@ python3 semantic_visualize.py --dataset='train' --image_id=2 --black_bg=0
 Please cite the corresponding paper if you found our datasets or code useful:
 
 ```
-@inproceedings{ZouSketchyScene,
+@inproceedings{Zou18SketchyScene,
   author    = {Changqing Zou and
                 Qian Yu and
                 Ruofei Du and
@@ -124,10 +152,14 @@ Please cite the corresponding paper if you found our datasets or code useful:
                 Hao Zhang},
   title     = {SketchyScene: Richly-Annotated Scene Sketches},
   booktitle = {ECCV},
-  year      = {2018}
+  year      = {2018},
+  publisher = {Springer International Publishing},
+  pages		= {438--454},
+  doi		= {10.1007/978-3-030-01267-0_26},
+  url		= {https://github.com/SketchyScene/SketchyScene}
 }
 ```
 
 ## Credits
-- ResNet-101 model pre-trained on ImageNet in TensorFlow version by [chenxi116](https://github.com/chenxi116/TF-resnet)
-- Code for DeepLab model by [Tensorflow Authors](https://github.com/tensorflow/models/blob/master/research/resnet/resnet_model.py) and [chenxi116](https://github.com/chenxi116/TF-deeplab)
+- The ResNet-101 model pre-trained on ImageNet in TensorFlow is created by [chenxi116](https://github.com/chenxi116/TF-resnet)
+- The code for the DeepLab model is authored by [Tensorflow authors](https://github.com/tensorflow/models/blob/master/research/resnet/resnet_model.py) and [chenxi116](https://github.com/chenxi116/TF-deeplab)

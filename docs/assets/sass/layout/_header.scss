@@ -1,0 +1,239 @@
+///
+/// Elemental by Pixelarity
+/// pixelarity.com @pixelarity
+/// License: pixelarity.com/license
+///
+
+/* Header */
+
+	@include keyframes('reveal-header') {
+		0% { top: -4em; opacity: 0; }
+		100% { top: 0; opacity: 1; }
+	}
+
+	body {
+		padding-top: 8em;
+	}
+
+	#header {
+		@include vendor('display', 'flex');
+		background: _palette(bg);
+		box-shadow: 0 0 0.15em 0 rgba(0,0,0,0.075);
+		height: 3.5em;
+		left: 0;
+		line-height: 3.5em;
+		padding: 0 2em;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: _misc(z-index-base) + 1;
+
+		> .logo {
+			display: inline-block;
+			margin: 0;
+			white-space: nowrap;
+
+			&:before {
+				font-size: 1em;
+				font-size: 16px;
+				margin-left: -1em;
+				margin-right: 0.75em;
+			}
+		}
+
+		> nav {
+			width: 100%;
+			text-align: right;
+
+			> ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+
+				> li {
+					display: inline-block;
+					margin-left: 1em;
+					padding: 0;
+
+					> ul {
+						display: none;
+					}
+
+					a {
+						color: inherit;
+						border: 0;
+						padding: 0.35em 0.75em;
+						border-radius: _size(border-radius);
+					}
+
+					&:first-child {
+						margin-left: 0 !important;
+					}
+
+					&.dropotron-active {
+						a {
+							color: inherit !important;
+							background-color: _palette(border-bg);
+						}
+					}
+
+					&.active {
+						a {
+							color: _palette(fg-bold);
+							font-weight: _font(weight-extrabold);
+							position: relative;
+
+							&:after {
+								@include vendor('transition', 'background-color #{_duration(transition)} ease-in-out');
+								background-color: _palette(border);
+								border-radius: 0.175em;
+								bottom: -0.05em;
+								content: '';
+								height: 0.175em;
+								left: 0.5em;
+								position: absolute;
+								width: calc(100% - 1em);
+							}
+
+							&:hover {
+								&:after {
+									background-color: _palette(accent1, bg);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.reveal {
+			@include vendor('animation', 'reveal-header 0.5s ease');
+		}
+
+		&.alt {
+			@include vendor('align-items', 'center');
+			@include vendor('animation', 'none');
+			background-color: transparent;
+			box-shadow: none;
+			height: 8em;
+			position: absolute;
+
+			> .logo {
+				display: none;
+			}
+
+			> nav {
+				text-align: center;
+
+				> ul {
+					> li {
+						margin-left: 1.5em;
+					}
+				}
+			}
+		}
+
+		@include breakpoint(large) {
+			> nav {
+				> ul {
+					> li {
+						margin-left: 0.5em;
+					}
+				}
+			}
+
+			&.alt {
+				> nav {
+					> ul {
+						> li {
+							margin-left: 1em;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.dropotron {
+		background: #fff;
+		border-radius: _size(border-radius);
+		box-shadow: 0 0.05em 0.175em 0 rgba(0,0,0,0.1);
+		list-style: none;
+		margin-top: -0.75em;
+		min-width: 10em;
+		padding: 0.75em 0;
+
+		li {
+			padding: 0;
+
+			a {
+				@include vendor('transition', 'none !important');
+				border: 0;
+				box-shadow: inset 0 1px 0 0 _palette(border-bg);
+				color: inherit;
+				display: block;
+				line-height: 2.25em;
+				padding: 0 1em;
+			}
+
+			&:first-child {
+				> a {
+					box-shadow: none;
+				}
+			}
+
+			&.active,
+			&:hover {
+				> a {
+					background: _palette(accent1, bg);
+					color: _palette(accent1, fg-bold) !important;
+				}
+			}
+		}
+
+		&.level-0 {
+			font-size: 0.9em;
+			margin-top: 0.75em;
+
+			&:before {
+				-moz-transform: rotate(45deg);
+				-webkit-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+				background: #fff;
+				content: '';
+				display: block;
+				height: 0.75em;
+				position: absolute;
+				left: 50%;
+				top: -0.375em;
+				width: 0.75em;
+				margin-left: -0.375em;
+				box-shadow: inset 1px 1px 0 0 rgba(0,0,0,0.075);
+				box-shadow: -1px -1px 2px 0 rgba(0,0,0,0.05);
+			}
+		}
+	}
+
+	@include breakpoint(large) {
+		body {
+			padding-top: 6em;
+		}
+
+		#header {
+			&.alt {
+				height: 6em;
+			}
+		}
+	}
+
+	@include breakpoint(medium) {
+		body {
+			padding-top: 0;
+		}
+
+		#header {
+			display: none;
+		}
+	}

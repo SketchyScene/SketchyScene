@@ -1,0 +1,40 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/skel';
+
+/*
+	Elemental by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button,
+	.button {
+		border: solid 1px _palette(border);
+
+		&.special {
+			border: 0;
+		}
+	}
+
+/* Header */
+
+	#header {
+		border-bottom: solid 1px _palette(border);
+	}
+
+	.dropotron {
+		border: solid 1px _palette(border);
+
+		&.level-0 {
+			&:before {
+				display: none;
+			}
+		}
+	}

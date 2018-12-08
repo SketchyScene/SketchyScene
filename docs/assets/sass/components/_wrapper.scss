@@ -1,0 +1,134 @@
+///
+/// Elemental by Pixelarity
+/// pixelarity.com @pixelarity
+/// License: pixelarity.com/license
+///
+
+/* Wrapper */
+
+	.wrapper {
+		@include padding(5em, 5em);
+		position: relative;
+
+		&.style1 {
+			@include color(accent1);
+		}
+
+		&.style2 {
+			@include color(accent2);
+		}
+
+		&.style3 {
+			@include color(accent3);
+		}
+
+		&.spotlight {
+			@include vendor('display', 'flex');
+			@include vendor('align-items', 'stretch');
+			padding: 0;
+
+			> * {
+				margin: 0;
+
+				> * {
+					-ms-flex: 0 1 auto;
+				}
+			}
+
+			> :first-child {
+				width: 60%;
+			}
+
+			> :last-child {
+				width: 40%;
+			}
+
+			> .content {
+				@include vendor('display', 'flex');
+				@include vendor('align-items', 'center');
+				@include padding(5em, 5em);
+			}
+
+			> .grid-icons {
+				border-width: 0px;
+				border-left-width: 1px;
+			}
+
+			> .image {
+				border-radius: 0;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+				display: block;
+			}
+
+			&.alt {
+				@include vendor('flex-direction', 'row-reverse');
+			}
+		}
+
+		@include breakpoint(large) {
+			@include padding(4em, 4em);
+
+			&.spotlight {
+				> .content {
+					@include padding(4em, 4em);
+				}
+			}
+		}
+
+		@include breakpoint(medium) {
+			&.spotlight {
+				@include vendor('flex-direction', 'column');
+				text-align: center;
+
+				> :first-child {
+					width: 100%;
+				}
+
+				> :last-child {
+					width: 100%;
+				}
+
+				> .grid-icons {
+					border-width: 0px;
+					border-top-width: 1px;
+				}
+
+				> .content {
+					& + .image {
+						@include vendor('order', '-1');
+					}
+				}
+
+				> .image {
+					height: 40em;
+					max-height: 50vh;
+				}
+
+				&.alt {
+					@include vendor('flex-direction', 'column');
+				}
+			}
+		}
+
+		@include breakpoint(small) {
+			@include padding(3em, 3em);
+
+			&.spotlight {
+				> .content {
+					@include padding(3em, 3em);
+				}
+			}
+		}
+
+		@include breakpoint(xsmall) {
+			@include padding(3em, 2em);
+
+			&.spotlight {
+				> .content {
+					@include padding(3em, 2em);
+				}
+			}
+		}
+	}

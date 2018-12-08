@@ -1,0 +1,37 @@
+/*
+	Elemental by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button,
+	.button {
+		border: solid 1px #e3e3e3;
+	}
+
+		input[type="submit"].special,
+		input[type="reset"].special,
+		input[type="button"].special,
+		button.special,
+		.button.special {
+			border: 0;
+		}
+
+/* Header */
+
+	#header {
+		border-bottom: solid 1px #e3e3e3;
+	}
+
+	.dropotron {
+		border: solid 1px #e3e3e3;
+	}
+
+		.dropotron.level-0:before {
+			display: none;
+		}
