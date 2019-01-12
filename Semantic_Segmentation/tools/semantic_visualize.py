@@ -44,7 +44,7 @@ if __name__ == "__main__":
     parser.add_argument('--image_id', '-id', type=int, default=-1, help="choose an image")
     parser.add_argument('--black_bg', '-bl', type=int, choices=[0, 1],
                         default=1, help="use black or white background for visualization")
-    parser.add_argument('--data_basedir', '-db', type=str, default='../data', help="set the data base dir")
+    parser.add_argument('--data_basedir', '-db', type=str, default='../../data', help="set the data base dir")
 
     args = parser.parse_args()
 
