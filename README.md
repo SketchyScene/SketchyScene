@@ -3,6 +3,14 @@
 This repository hosts the datasets and the code for training the model. Please refer to our ECCV paper for more information: ["SketchyScene: Richly-Annotated Scene Sketches
 "](http://openaccess.thecvf.com/content_ECCV_2018/papers/Changqing_Zou_SketchyScene_Richly-Annotated_Scene_ECCV_2018_paper.pdf)
 
+## Content
+- [Dataset](#dataset)
+- [USketch](#usketch)
+- [DuCrawler](#ducrawler)
+- [Semantic Segmentation](#semantic-segmentation)
+- [Instance Segmentation](#instance-segmentation)
+- [Citation](#citation)
+
 ## Dataset
 
 Our datasets consist of three part:
@@ -64,7 +72,7 @@ The code under `Semantic_Segmentation` is for the semantic segmentation experime
 ### Requirements
 
 - Python 3
-- Tensorflow (>= 1.0.0)
+- Tensorflow (>= 1.3.0)
 - Numpy
 - PIL (Pillow version = 2.3.0)
 - [pydensecrf](https://github.com/lucasb-eyer/pydensecrf)
@@ -97,7 +105,7 @@ python3 segment_main.py --mode='test' --dcrf=0
 
 - DenseCRF is used if setting `--dcrf=1`
 
-Our trained model can be download [here](https://drive.google.com/file/d/1Z72Iv3OobWv-tYoUwvY_7HMgsLUGKkcp/view?usp=sharing).
+Our trained semantic segmentation model can be download [here](https://drive.google.com/file/d/1Z72Iv3OobWv-tYoUwvY_7HMgsLUGKkcp/view?usp=sharing).
 
 
 ### Inference
@@ -120,7 +128,7 @@ Also, you can try [our trained model](https://drive.google.com/file/d/1Z72Iv3Oob
 
 ### Visualization
 
-You can visualize the ground-truth semantic results with the `.mat` data using `tools/semantic_visualize.py`. **Note** that the data should be correctly arranged following the instructions under `data` directory.
+You can visualize the ground-truth semantic results with the `.mat` data using `Semantic_Segmentation/tools/semantic_visualize.py`. **Note** that the data should be correctly arranged following the instructions under `data` directory.
 
 For visualization with the 1st/2nd image in `train` dataset, run:
 
@@ -132,6 +140,85 @@ python3 semantic_visualize.py --dataset='train' --image_id=2 --black_bg=0
 - Visualization under `val`/`test` dataset if setting `--dataset='val'` or `--dataset='test'`
 - Try other image if setting `--image_id` to other number
 - The background is black if setting `--black_bg=1` and white if `--black_bg=0`.
+
+
+## Instance Segmentation
+
+The code under `Instance_Segmentation` is for the instance segmentation experiments of our SketchyScene dataset.
+
+### Requirements
+
+- Python 3
+- Tensorflow (>= 1.3.0)
+- Keras 2.0.8
+- Other common packages listed in requirements.txt
+
+### Preparations
+
+- Download the whole dataset and place them under `data` directory following its instructions.
+- Download the coco/imagenet pre-trained model following the instructions under `Instance_Segmentation/pretrained_model`. 
+
+### Training
+
+After the preparations, run:
+
+```
+python3 segment_train.py
+```
+or
+```
+python3 segment_train.py --init_model='coco'
+```
+
+- Choose the initial pre-trained model from ['coco', 'imagenet', 'last'] at `--init_model`. Train from the fresh start if not specified. 'last' denotes your lastly trained model.
+- Other settings can be modified at `SketchTrainConfig` in this file.
+
+### Evaluation
+
+Evaluation can be done with `val` and `test` dataset. Make sure that your trained model is under the directory `Instance_Segmentation/outputs/snapshot`. 
+
+For evaluation under `val`/`test`, run:
+```
+python3 segment_evaluate.py --dataset='test' --epochs='0100' --use_edgelist=0
+python3 segment_evaluate.py --dataset='val' --epochs='0100' --use_edgelist=1
+```
+
+- You should set `--epochs` to the last four digits of the name of your trained model.
+- Edgelist is used if setting `--use_edgelist=1`. **Note** that if you want to use edgelist as post-processing, make sure you have generated the edgelist labels following the instructions under `Instance_Segmentation/libs/edgelist_utils_matlab`. 
+
+Our trained instance segmentation model can be download [here](https://drive.google.com/file/d/1pArvC9B6gKjxXdVV4oxwtnvmHxcLAxBE/view?usp=sharing).
+
+
+### Inference
+
+You can obtain a instance segmentation output during inference. Inference can be done with `val` and `test` dataset.
+
+For inference with the 2nd image in `val` dataset without edgelist, run:
+
+```
+python3 segment_inference.py --dataset='val' --image_id=2 --epochs='0100' --use_edgelist=0
+```
+
+- Inference under `test` dataset if setting `--dataset='test'`
+- Try other image if setting `--image_id` to other number
+- Set the `--epochs` to the last four digits of your trained model
+- Edgelist is used if setting `--use_edgelist=1`. Also make sure the edgelist labels have been generated.
+
+Also, you can try [our trained model](https://drive.google.com/file/d/1pArvC9B6gKjxXdVV4oxwtnvmHxcLAxBE/view?usp=sharing).
+
+
+### Visualization
+
+You can visualize the ground-truth semantic results with the `.mat` data using `Instance_Segmentation/tools/instance_visualize.py`. **Note** that the data should be correctly arranged following the instructions under `data` directory.
+
+For visualization with the 1st image in `train` dataset, run:
+
+```
+python3 instance_visualize.py --dataset='train' --image_id=1
+```
+
+- Visualization under `val`/`test` dataset if setting `--dataset='val'` or `--dataset='test'`
+- Try other image if setting `--image_id` to other number
 
 
 
@@ -163,3 +250,4 @@ Please cite the corresponding paper if you found our datasets or code useful:
 ## Credits
 - The ResNet-101 model pre-trained on ImageNet in TensorFlow is created by [chenxi116](https://github.com/chenxi116/TF-resnet)
 - The code for the DeepLab model is authored by [Tensorflow authors](https://github.com/tensorflow/models/blob/master/research/resnet/resnet_model.py) and [chenxi116](https://github.com/chenxi116/TF-deeplab)
+- The code for the Mask R-CNN model is authored by [matterport](https://github.com/matterport/Mask_RCNN)
