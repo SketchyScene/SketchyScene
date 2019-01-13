@@ -1,0 +1,30 @@
+.idea/
+.ipynb_checkpoints/
+
+# data and model
+datas/
+
+
+# Batches
+*.npz
+
+
+# test data
+testData/
+
+
+# outputs
+outputs/
+log/
+snapshot/
+*.txt~
+*.m~
+
+.DS_Store
+.gitignore~
+
+*.pyc
+
+*.html
+*.png
+*.h5

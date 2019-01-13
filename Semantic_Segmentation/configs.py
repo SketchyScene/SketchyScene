@@ -35,7 +35,7 @@ tf.app.flags.DEFINE_string(
 
 tf.app.flags.DEFINE_string(
     'data_base_dir',
-    'data',
+    '../data',
     'The folder of train_images')
 
 ############################################
