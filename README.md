@@ -80,7 +80,7 @@ The code under `Semantic_Segmentation` is for the semantic segmentation experime
 ### Preparations
 
 - Download the whole dataset and place them under `data` directory following its instructions.
-- Generate the ImageNet pre-trained "ResNet-101" model in TensorFlow version for initial training and place it under the `resnet_pretrained_model` directory. This can be obtained following the instructions in [chenxi116/TF-resnet](https://github.com/chenxi116/TF-resnet#example-usage). For convenience, you can download our converted model [here](https://drive.google.com/file/d/1Z72Iv3OobWv-tYoUwvY_7HMgsLUGKkcp/view?usp=sharing). 
+- Generate the ImageNet pre-trained "ResNet-101" model in TensorFlow version for initial training and place it under the `resnet_pretrained_model` directory. This can be obtained following the instructions in [chenxi116/TF-resnet](https://github.com/chenxi116/TF-resnet#example-usage). For convenience, you can download our converted model [here](https://drive.google.com/drive/folders/11sI3IARgAKTf4rut1isQgTOdGKFeyZ1c?usp=sharing). 
 
 ### Training
 
@@ -105,7 +105,7 @@ python3 segment_main.py --mode='test' --dcrf=0
 
 - DenseCRF is used if setting `--dcrf=1`
 
-Our trained semantic segmentation model can be download [here](https://drive.google.com/file/d/1Z72Iv3OobWv-tYoUwvY_7HMgsLUGKkcp/view?usp=sharing).
+Our trained semantic segmentation model can be download [here](https://drive.google.com/drive/folders/11sI3IARgAKTf4rut1isQgTOdGKFeyZ1c?usp=sharing).
 
 
 ### Inference
@@ -123,7 +123,7 @@ python3 segment_main.py --mode='inference' --infer_dataset='val' --image_id=2 --
 - The background is black if setting `--black_bg=1`. Otherwise, it is white.
 - DenseCRF is used if setting `--dcrf=1`
 
-Also, you can try [our trained model](https://drive.google.com/file/d/1Z72Iv3OobWv-tYoUwvY_7HMgsLUGKkcp/view?usp=sharing).
+Also, you can try [our trained model](https://drive.google.com/drive/folders/11sI3IARgAKTf4rut1isQgTOdGKFeyZ1c?usp=sharing).
 
 
 ### Visualization
@@ -186,7 +186,7 @@ python3 segment_evaluate.py --dataset='val' --epochs='0100' --use_edgelist=1
 - You should set `--epochs` to the last four digits of the name of your trained model.
 - Edgelist is used if setting `--use_edgelist=1`. **Note** that if you want to use edgelist as post-processing, make sure you have generated the edgelist labels following the instructions under `Instance_Segmentation/libs/edgelist_utils_matlab`. 
 
-Our trained instance segmentation model can be download [here](https://drive.google.com/file/d/1pArvC9B6gKjxXdVV4oxwtnvmHxcLAxBE/view?usp=sharing).
+Our trained instance segmentation model can be download [here](https://drive.google.com/drive/folders/11sI3IARgAKTf4rut1isQgTOdGKFeyZ1c?usp=sharing).
 
 
 ### Inference
@@ -204,7 +204,7 @@ python3 segment_inference.py --dataset='val' --image_id=2 --epochs='0100' --use_
 - Set the `--epochs` to the last four digits of your trained model
 - Edgelist is used if setting `--use_edgelist=1`. Also make sure the edgelist labels have been generated.
 
-Also, you can try [our trained model](https://drive.google.com/file/d/1pArvC9B6gKjxXdVV4oxwtnvmHxcLAxBE/view?usp=sharing).
+Also, you can try [our trained model](https://drive.google.com/drive/folders/11sI3IARgAKTf4rut1isQgTOdGKFeyZ1c?usp=sharing).
 
 
 ### Visualization
