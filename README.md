@@ -7,8 +7,8 @@ This repository hosts the datasets and the code for training the model. Please r
 - [Dataset](#dataset)
 - [USketch](#usketch)
 - [DuCrawler](#ducrawler)
-- [Semantic Segmentation](#semantic-segmentation)
-- [Instance Segmentation](#instance-segmentation)
+- [Semantic Segmentation [TensorFlow]](#semantic-segmentation) | [[PyTorch]](https://github.com/MarkMoHR/SketchyScene-pytorch)
+- [Instance Segmentation [TensorFlow]](#instance-segmentation) | [[PyTorch]](https://github.com/MarkMoHR/SketchyScene-pytorch)
 - [Citation](#citation)
 
 ## Dataset
