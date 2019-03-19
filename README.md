@@ -25,7 +25,7 @@ Our datasets consist of three part:
 
 * [SketchyScene-7k](https://obj.umiacs.umd.edu/private_datasets/SketchyScene-7k.7z) (750.3 MB)
 * [SketchyScene-Selected3](https://obj.umiacs.umd.edu/private_datasets/SketchyScene-Selected3.7z) (1.6 GB)
-* [SketchyScene-Synthesized30](https://obj.umiacs.umd.edu/private_datasets/SketchyScene-Synthesized30.7z) (16.1GB)
+* [SketchyScene-Synthesized30](https://obj.umiacs.umd.edu/private_datasets/SketchyScene-Synthesized30.7z) (16.1 GB)
 
 ### Google Drive Hosting (tar or zip)
 * [SketchyScene-7k](https://drive.google.com/open?id=1m1fac2XIZVAGu_ByE6BtwxGSLytZspO-)
