@@ -251,3 +251,13 @@ Please cite the corresponding paper if you found our datasets or code useful:
 - The ResNet-101 model pre-trained on ImageNet in TensorFlow is created by [chenxi116](https://github.com/chenxi116/TF-resnet)
 - The code for the DeepLab model is authored by [Tensorflow authors](https://github.com/tensorflow/models/blob/master/research/resnet/resnet_model.py) and [chenxi116](https://github.com/chenxi116/TF-deeplab)
 - The code for the Mask R-CNN model is authored by [matterport](https://github.com/matterport/Mask_RCNN)
+
+
+## License
+
+Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License with 996 ICU clause: [![996.ICU](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu/#/en_US)
+
+The above license is only granted to entities that act in concordance with local labor laws. In addition, the following requirements must be observed:
+
+- The licensee must not, explicitly or implicitly, request or schedule their employees to work more than 45 hours in any single week.
+- The licensee must not, explicitly or implicitly, request or schedule their employees to be at work consecutively for 10 hours.
