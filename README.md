@@ -25,7 +25,7 @@ Our datasets consist of three part:
 
 * [SketchyScene-7k](https://obj.umiacs.umd.edu/private_datasets/SketchyScene-7k.7z) (750.3 MB)
 * [SketchyScene-Selected3](https://obj.umiacs.umd.edu/private_datasets/SketchyScene-Selected3.7z) (1.6 GB)
-* [SketchyScene-Synthesized30](https://obj.umiacs.umd.edu/private_datasets/SketchyScene-Synthesized30.7z) (16.1GB)
+* [SketchyScene-Synthesized30](https://obj.umiacs.umd.edu/private_datasets/SketchyScene-Synthesized30.7z) (16.1 GB)
 
 ### Google Drive Hosting (tar or zip)
 * [SketchyScene-7k](https://drive.google.com/open?id=1m1fac2XIZVAGu_ByE6BtwxGSLytZspO-)
@@ -251,3 +251,13 @@ Please cite the corresponding paper if you found our datasets or code useful:
 - The ResNet-101 model pre-trained on ImageNet in TensorFlow is created by [chenxi116](https://github.com/chenxi116/TF-resnet)
 - The code for the DeepLab model is authored by [Tensorflow authors](https://github.com/tensorflow/models/blob/master/research/resnet/resnet_model.py) and [chenxi116](https://github.com/chenxi116/TF-deeplab)
 - The code for the Mask R-CNN model is authored by [matterport](https://github.com/matterport/Mask_RCNN)
+
+
+## License
+
+Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License with 996 ICU clause: [![996.ICU](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu/#/en_US)
+
+The above license is only granted to entities that act in concordance with local labor laws. In addition, the following requirements must be observed:
+
+- The licensee must not, explicitly or implicitly, request or schedule their employees to work more than 45 hours in any single week.
+- The licensee must not, explicitly or implicitly, request or schedule their employees to be at work consecutively for 10 hours.
