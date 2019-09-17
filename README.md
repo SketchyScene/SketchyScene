@@ -16,6 +16,8 @@ This repository hosts the datasets and the code for training the model. Please r
 Our datasets consist of three part:
 * *SketchyScene-7k* 
     * *SketchyScene-7k* contains 7265 crowdsourced sketchy scenes (train 5617 + val 535 + test 1113).
+* *SketchyScene-components* 
+    * *SketchyScene-components* contains the single object sketches and their composing order in the scene sketches.
 * *SketchyScene-Selected3*
 	* *SketchyScene-Selected3* contains 3 manually selected, synthesized sketchy scenes based on the crowdsourced template, resulting 21,795 sketchy scenes. 
 * *SketchyScene-Synthesized30* 
@@ -29,14 +31,10 @@ Our datasets consist of three part:
 
 ### Google Drive Hosting (tar or zip)
 * [SketchyScene-7k](https://drive.google.com/open?id=1m1fac2XIZVAGu_ByE6BtwxGSLytZspO-)
+* [SketchyScene-components](https://drive.google.com/drive/folders/1Nd6XWSi8UQfIVpuesVpFO4VY0NgAx1-K?usp=sharing)
 * [SketchyScene-Selected3](https://drive.google.com/drive/folders/1x7DiyTlpEFb_fydOyjL48wnvREQO1u1d?usp=sharing)
 * [SketchyScene-Synthesized30](https://drive.google.com/drive/folders/15TWNXFOKoB0dKkOaDofFgLJ_9JuxgStm?usp=sharing)
 
-### Directory 
-* DRAWING_GT_VIS/: scene sketches in .png format
-* DRAWING_GT/: scene sketches in .mat format
-* CLASS_GT/: ground-truth semantic segmentation in .mat format
-* INSTANCE_GT/ ground-truth instance segmentation in .mat format
 
 ## USketch
 
