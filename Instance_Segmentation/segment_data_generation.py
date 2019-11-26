@@ -213,8 +213,14 @@ def segment_data_generation(mode, data_base_dir, use_edgelist=False, debug=False
 
             for cate_idx_i in range(len(instance_sorted_index)):
                 pred_class_ids_list.append(pred_class_ids[instance_sorted_index[cate_idx_i]])
-                pred_masks_list.append(pred_masks[:, :, instance_sorted_index[cate_idx_i]])
-                pred_boxes_list.append(pred_boxes[instance_sorted_index[cate_idx_i]])
+
+                pred_box = pred_boxes[instance_sorted_index[cate_idx_i]]
+                y1, x1, y2, x2 = pred_box
+                pred_mask_large = pred_masks[:, :, instance_sorted_index[cate_idx_i]]
+                pred_mask = pred_mask_large[y1: y2 + 1, x1: x2 + 1]
+
+                pred_masks_list.append(pred_mask)
+                pred_boxes_list.append(pred_box)
 
             # print('pred_class_ids_list', pred_class_ids_list)
             assert len(pred_class_ids_list) == pred_class_ids.shape[0]
@@ -225,6 +231,21 @@ def segment_data_generation(mode, data_base_dir, use_edgelist=False, debug=False
                      pred_boxes=pred_boxes_list)
 
 
+def expand_small_segmentation_mask(pred_masks_small_list, pred_boxes):
+    pred_masks = []
+
+    for i in range(len(pred_masks_small_list)):
+        pred_mask_small = pred_masks_small_list[i]
+        y1, x1, y2, x2 = pred_boxes[i]
+
+        pred_mask_exp = np.zeros((768, 768), dtype=np.uint8)
+        pred_mask_exp[y1: y2 + 1, x1: x2 + 1] = pred_mask_small
+        pred_masks.append(pred_mask_exp)
+
+    pred_masks = np.stack(pred_masks, axis=0)  # (N, IMAGE_SIZE, IMAGE_SIZE)
+    return pred_masks
+
+
 def debug_saved_npz(dataset_type, img_idx, data_base_dir):
     outputs_base_dir = 'outputs'
     seg_data_save_base_dir = os.path.join(outputs_base_dir, 'inst_segm_output_data', dataset_type)
@@ -233,8 +254,10 @@ def debug_saved_npz(dataset_type, img_idx, data_base_dir):
     npz = np.load(npz_name)
 
     pred_class_ids = np.array(npz['pred_class_ids'], dtype=np.int32)
-    pred_masks = np.array(npz['pred_masks'], dtype=np.uint8)
     pred_boxes = np.array(npz['pred_boxes'], dtype=np.int32)
+    pred_masks_s = npz['pred_masks']
+    pred_masks = expand_small_segmentation_mask(pred_masks_s, pred_boxes)  # [N, H, W]
+
     pred_masks = np.transpose(pred_masks, (1, 2, 0))
     print(pred_class_ids.shape)
     print(pred_masks.shape)
