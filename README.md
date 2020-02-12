@@ -48,7 +48,7 @@ git submodule init
 git submodule update
 ```
 
-A live demo is presented at http://duruofei.com/skenew/?task=1.
+A live demo is presented at http://go.duruofei.com/skenew/?task=1.
 
 ![USketch Interface](figures/USketch.jpg "Interface and work flow of USketch for crowdsourcing the dataset. See areas of function buttons (upper left), component display (lower left), and canvas (right). ")
 
