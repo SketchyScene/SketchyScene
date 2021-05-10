@@ -14,15 +14,15 @@ This repository hosts the datasets and the code for training the model. Please r
 ## Dataset
 
 Our datasets consist of three part:
-* *SketchyScene-7k* 
+* *SketchyScene-7k*
     * *SketchyScene-7k* contains 7265 crowdsourced sketchy scenes (train 5617 + val 535 + test 1113).
-* *SketchyScene-components* 
+* *SketchyScene-components*
     * *SketchyScene-components* contains the single object sketches and their composing order in the scene sketches.
 * *SketchyScene-Selected3*
-	* *SketchyScene-Selected3* contains 3 manually selected, synthesized sketchy scenes based on the crowdsourced template, resulting 21,795 sketchy scenes. 
-* *SketchyScene-Synthesized30* 
+	* *SketchyScene-Selected3* contains 3 manually selected, synthesized sketchy scenes based on the crowdsourced template, resulting 21,795 sketchy scenes.
+* *SketchyScene-Synthesized30*
     * *SketchyScene-Synthesized30* contains 30 synthesized examples for each template, resulting additional 217,950 sketchy scenes.
-	
+
 ### UMIACS Hosting (7-zip)
 
 * [SketchyScene-7k](https://obj.umiacs.umd.edu/private_datasets/SketchyScene-7k.7z) (750.3 MB)
@@ -48,7 +48,7 @@ git submodule init
 git submodule update
 ```
 
-A live demo is presented at http://go.duruofei.com/skenew/?task=1.
+A live demo is presented at http://demo.duruofei.com/skenew.
 
 ![USketch Interface](figures/USketch.jpg "Interface and work flow of USketch for crowdsourcing the dataset. See areas of function buttons (upper left), component display (lower left), and canvas (right). ")
 
@@ -59,9 +59,9 @@ In preparation for the reference data in **USketch**, we have developed a custom
 
 ![Object instance frequency](figures/DuCrawler.jpg "Object instance frequency for each category.")
 
-We selected 45 categories for our dataset, including objects and stuff classes. Specifically, we first considered several common scenes (e.g., garden, farm, dinning room, and park) and extracted 100 objects/stuff classes from them as raw candidates. Then we defined three super-classes, i.e. Weather, Object, and Field (Environment), and assigned the candidates into each super-class. Finally, we selected 45 from them by considering their combinations and commonness in real life. 
+We selected 45 categories for our dataset, including objects and stuff classes. Specifically, we first considered several common scenes (e.g., garden, farm, dinning room, and park) and extracted 100 objects/stuff classes from them as raw candidates. Then we defined three super-classes, i.e. Weather, Object, and Field (Environment), and assigned the candidates into each super-class. Finally, we selected 45 from them by considering their combinations and commonness in real life.
 
-Instead of asking workers to draw each object, we provided them with plenty of object sketches (each object candidate is also refer to a ``component") as candidates. In order to have enough variations in the object appearance in terms of pose and appearance, we searched and downloaded around 1,500 components for each category. 
+Instead of asking workers to draw each object, we provided them with plenty of object sketches (each object candidate is also refer to a ``component") as candidates. In order to have enough variations in the object appearance in terms of pose and appearance, we searched and downloaded around 1,500 components for each category.
 
 ## Semantic Segmentation
 
@@ -78,7 +78,7 @@ The code under `Semantic_Segmentation` is for the semantic segmentation experime
 ### Preparations
 
 - Download the whole dataset and place them under `data` directory following its instructions.
-- Generate the ImageNet pre-trained "ResNet-101" model in TensorFlow version for initial training and place it under the `resnet_pretrained_model` directory. This can be obtained following the instructions in [chenxi116/TF-resnet](https://github.com/chenxi116/TF-resnet#example-usage). For convenience, you can download our converted model [here](https://drive.google.com/drive/folders/11sI3IARgAKTf4rut1isQgTOdGKFeyZ1c?usp=sharing). 
+- Generate the ImageNet pre-trained "ResNet-101" model in TensorFlow version for initial training and place it under the `resnet_pretrained_model` directory. This can be obtained following the instructions in [chenxi116/TF-resnet](https://github.com/chenxi116/TF-resnet#example-usage). For convenience, you can download our converted model [here](https://drive.google.com/drive/folders/11sI3IARgAKTf4rut1isQgTOdGKFeyZ1c?usp=sharing).
 
 ### Training
 
@@ -154,7 +154,7 @@ The code under `Instance_Segmentation` is for the instance segmentation experime
 ### Preparations
 
 - Download the whole dataset and place them under `data` directory following its instructions.
-- Download the coco/imagenet pre-trained model following the instructions under `Instance_Segmentation/pretrained_model`. 
+- Download the coco/imagenet pre-trained model following the instructions under `Instance_Segmentation/pretrained_model`.
 
 ### Training
 
@@ -173,7 +173,7 @@ python3 segment_train.py --init_model='coco'
 
 ### Evaluation
 
-Evaluation can be done with `val` and `test` dataset. Make sure that your trained model is under the directory `Instance_Segmentation/outputs/snapshot`. 
+Evaluation can be done with `val` and `test` dataset. Make sure that your trained model is under the directory `Instance_Segmentation/outputs/snapshot`.
 
 For evaluation under `val`/`test`, run:
 ```
@@ -182,7 +182,7 @@ python3 segment_evaluate.py --dataset='val' --epochs='0100' --use_edgelist=1
 ```
 
 - You should set `--epochs` to the last four digits of the name of your trained model.
-- Edgelist is used if setting `--use_edgelist=1`. **Note** that if you want to use edgelist as post-processing, make sure you have generated the edgelist labels following the instructions under `Instance_Segmentation/libs/edgelist_utils_matlab`. 
+- Edgelist is used if setting `--use_edgelist=1`. **Note** that if you want to use edgelist as post-processing, make sure you have generated the edgelist labels following the instructions under `Instance_Segmentation/libs/edgelist_utils_matlab`.
 
 Our trained instance segmentation model can be download [here](https://drive.google.com/drive/folders/11sI3IARgAKTf4rut1isQgTOdGKFeyZ1c?usp=sharing).
 
@@ -224,7 +224,7 @@ python3 instance_visualize.py --dataset='train' --image_id=1
 
 Please cite the corresponding paper if you found our datasets or code useful:
 
-```
+```bibtex
 @inproceedings{Zou18SketchyScene,
   author    = {Changqing Zou and
                 Qian Yu and
@@ -242,6 +242,22 @@ Please cite the corresponding paper if you found our datasets or code useful:
   pages		= {438--454},
   doi		= {10.1007/978-3-030-01267-0_26},
   url		= {https://github.com/SketchyScene/SketchyScene}
+}
+```
+
+## Related Work
+
+```bibtex
+@article{zouSA2019sketchcolorization,
+  title = {{Language-based Colorization of Scene Sketches}},
+  author = {Zou, Changqing and Mo, Haoran and Gao, Chengying and Du, Ruofei and Fu, Hongbo},
+  journal = {ACM Transactions on Graphics (Proceedings of ACM SIGGRAPH Asia 2019)},
+  year = {2019},
+  volume = 38,
+  number = 6,
+  pages = {233:1--233:16},
+  publisher = {ACM},
+  doi = {10.1145/3355089.3356561},
 }
 ```
 
